@@ -309,7 +309,7 @@ WITH t1 AS (
 
 SELECT *
 FROM t1
-WHERE cast(temperature AS INT) > cast(previous_day_temp AS INT);
+WHERE temperature > previous_day_temp AND recordDate-previous_Date =1;
 
 ################################# Problem 5 -  Average Time of Process per Machine - Easy ##########################################
 
