@@ -306,10 +306,10 @@ WITH t1 AS (
     	LAG(recordDate,1) OVER (ORDER BY recordDate) AS previous_Date
     FROM Weather
 )
-
-SELECT *
+SELECT id
 FROM t1
-WHERE temperature > previous_day_temp AND recordDate-previous_Date =1;
+WHERE temperature > previous_day_temp
+and DATEDIFF(recordDate,previous_Date) =1;
 
 ################################# Problem 5 -  Average Time of Process per Machine - Easy ##########################################
 
